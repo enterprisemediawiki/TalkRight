@@ -16,8 +16,8 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 # Extension credits
 $GLOBALS['wgExtensionCredits']['other'][] = array(
     'name' => 'TalkRight',
-    'version' => '1.5.1',
-    'author' => array('P.Lev&ecirc;que', 'Marc Noirot', 'James Montalvo'),
+    'version' => '1.5.0',
+    'author' => array('P.Leveque', 'Marc Noirot', 'James Montalvo'),
     'description' => 'Adds a <tt>talk</tt> permission independent from article edition',
     'url' => 'http://www.mediawiki.org/wiki/Extension:Talkright',
 );
@@ -25,6 +25,9 @@ $GLOBALS['wgExtensionCredits']['other'][] = array(
 # Register hooks
 $GLOBALS['wgHooks']['AlternateEdit'][] = 'TalkRight::alternateEdit';
 $GLOBALS['wgHooks']['ParserBeforeStrip'][] = 'TalkRight::giveEditRightsWhenViewingTalkPages';
+
+# Autoload
+$GLOBALS['wgAutoloadClasses']['TalkRight'] = __DIR__ . '/TalkRight.class.php';
 
 # Global 'talk' right
 $GLOBALS['wgAvailableRights'][] = 'talk';
