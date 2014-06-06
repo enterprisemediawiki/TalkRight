@@ -1,0 +1,35 @@
+{
+	"name": "enterprisemediawiki/talk-right",
+	"type": "mediawiki-extension",
+	"description": "Makes editing MediaWiki talk pages a distinct action from editing articles",
+	"keywords": [
+		"MediaWiki",
+		"Discussion"
+	],
+	"homepage": "https://www.mediawiki.org/wiki/Extension:TalkRight",
+	"license": "GPL-2.0+",
+	"authors": [
+		{
+			"name": "P.Lev&ecirc;que",
+			"role": "Original developer"
+		},
+		{
+			"name": "Marc Noirot",
+			"role": "Developer"
+		},
+		{
+			"name": "James Montalvo",
+			"role": "Current developer"
+		}
+	],
+	"support": {
+		"issues": "https://bugzilla.wikimedia.org/",
+		"github": "https://github.com/enterprisemediawiki/TalkRight/issues"
+	},
+	"require": {
+		"composer/installers": ">=1.0.1"
+	},
+	"autoload": {
+		"files": ["TalkRight.php"]
+	}
+}
