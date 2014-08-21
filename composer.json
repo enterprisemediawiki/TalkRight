@@ -1,5 +1,5 @@
 {
-	"name": "enterprisemediawiki/talk-right",
+	"name": "mediawiki/talk-right",
 	"type": "mediawiki-extension",
 	"description": "Makes editing MediaWiki talk pages a distinct action from editing articles",
 	"keywords": [
