@@ -1,0 +1,27 @@
+{
+	"name": "TalkRight",
+	"version": "2.0.0",
+	"author": [
+		"P.Leveque",
+		"Marc Noirot",
+		"James Montalvo"
+	],
+	"url": "http://www.mediawiki.org/wiki/Extension:Talkright",
+	"descriptionmsg": "talkright-desc",
+	"type": "other",
+	"AvailableRights": [
+		"talk"
+	],
+	"AutoloadClasses": {
+		"TalkRight": "TalkRight.class.php"
+	},
+	"Hooks": {
+		"AlternateEdit": [
+			"TalkRight::alternateEdit"
+		],
+		"ParserBeforeStrip": [
+			"TalkRight::giveEditRightsWhenViewingTalkPages"
+		]
+	},
+	"manifest_version": 1
+}

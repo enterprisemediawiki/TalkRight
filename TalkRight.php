@@ -1,33 +1,14 @@
 <?php
-/**
- * Talkright MediaWiki extension
- * @author Marc Noirot - marc dot noirot at gmail
- * @author P.Levêque - User:Phillev
- * @author James Montalvo - User:Jamesmontalvo3
- *
- * This extension makes the editing of talk pages a distinct action from
- * the editing of articles, to create finer permissions by adding the 'talk' right.
- *
-*/
-if ( !defined( 'MEDIAWIKI' ) ) {
-    die( 'Invalid entry point.' );
+if ( function_exists( 'wfLoadExtension' ) ) {
+	wfLoadExtension( 'TalkRight' );
+	// Keep i18n globals so mergeMessageFileList.php doesn't break
+	$wgMessagesDirs['TalkRight'] = __DIR__ . '/i18n';
+	wfWarn(
+		'Deprecated PHP entry point used for FooBar extension. ' .
+		'Please use wfLoadExtension instead, ' .
+		'see https://www.mediawiki.org/wiki/Extension_registration for more details.'
+	);
+	return;
+} else {
+	die( 'This version of the TalkRight extension requires MediaWiki 1.25+' );
 }
-
-# Extension credits
-$GLOBALS['wgExtensionCredits']['other'][] = array(
-    'name' => 'TalkRight',
-    'version' => '1.5.0',
-    'author' => array('P.Leveque', 'Marc Noirot', 'James Montalvo'),
-    'description' => 'Adds a <tt>talk</tt> permission independent from article edition',
-    'url' => 'http://www.mediawiki.org/wiki/Extension:Talkright',
-);
-
-# Register hooks
-$GLOBALS['wgHooks']['AlternateEdit'][] = 'TalkRight::alternateEdit';
-$GLOBALS['wgHooks']['ParserBeforeStrip'][] = 'TalkRight::giveEditRightsWhenViewingTalkPages';
-
-# Autoload
-$GLOBALS['wgAutoloadClasses']['TalkRight'] = __DIR__ . '/TalkRight.class.php';
-
-# Global 'talk' right
-$GLOBALS['wgAvailableRights'][] = 'talk';
