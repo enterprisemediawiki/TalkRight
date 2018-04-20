@@ -30,7 +30,7 @@ class TalkRight {
 	 * @param &$strip_state unused
      * @return true and false both seemed to work. [[Manual:Hooks/ParserBeforeStrip]] doesn't indicate what return value affects
      */    
-    static function giveEditRightsWhenViewingTalkPages ( &$parser, &$test, &$test ) {
+    static function giveEditRightsWhenViewingTalkPages ( &$parser, &$test1, &$test2 ) {
         
         $user = $parser->getUser();
         if ( $parser->getTitle()->isTalkPage() && $user->isAllowed( 'talk' ) ) {
