@@ -32,7 +32,7 @@ class TalkRight {
      */    
     static function giveEditRightsWhenViewingTalkPages ( &$parser, &$test1, &$test2 ) {
         
-        $user = $parser->getUser();
+        $user = $parser->getUserIdentity();
         if ( $parser->getTitle()->isTalkPage() && $user->isAllowed( 'talk' ) ) {
             array_push( $user->mRights, 'edit' );            
         }

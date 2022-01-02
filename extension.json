@@ -19,7 +19,7 @@
 		"AlternateEdit": [
 			"TalkRight::alternateEdit"
 		],
-		"ParserBeforeStrip": [
+		"ParserBeforeInternalParse": [
 			"TalkRight::giveEditRightsWhenViewingTalkPages"
 		]
 	},
